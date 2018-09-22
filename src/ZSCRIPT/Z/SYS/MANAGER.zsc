@@ -1,0 +1,25 @@
+class ZManager:Av_Thinker{
+    static
+    ZManager Instance(){
+        ZManager p=DataInstance();
+        if(!p)p=new('ZManager').Init();
+        return p;
+    }
+
+    static
+    clearscope
+    ZManager DataInstance(){
+        ThinkerIterator it=ThinkerIterator.Create('ZManager', STAT_STATIC);
+        return ZManager(it.Next());
+    }
+
+    private
+    ZManager Init(){
+        ChangeStatNum(STAT_STATIC);
+        // World State
+        WorldState=new('ZWorldState');
+        InitRegistries();
+        InitEvents();
+        return self;
+    }
+}
