@@ -64,7 +64,7 @@ def ZBuild(Settings, Compress):
 if __name__ == "__main__":
     from sys import argv
 
-    Compress = True
+    Compress = False
     for arg in argv[1:]:
         if arg.startswith("-C"):
             Compress = True
