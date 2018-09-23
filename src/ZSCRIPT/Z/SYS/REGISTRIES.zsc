@@ -47,16 +47,16 @@ class ZManager{
             DamageTypes.Add(ZDamageType.Create(Row.Get(0), Row.Get(1), Row.GetDouble(2), Row.GetDouble(3), Row.GetDouble(4), Row.GetDouble(5), ActualFlags));
         }
         // Upgrades
-        static const Class<ZArmorUpgrade> ArmorUpgradeNames[]={
-            $ZMAUpgrades
-        };
-        ArmorUpgrades=ZArmorUpgrades(new('ZArmorUpgrades').Init());
-        ZArmorUpgrade Upgrade;
-        for(int i=0; i<ArmorUpgradeNames.Size(); i++){
-            ArmorUpgrades.Add(Upgrade=ZArmorUpgrade(ZUpgrade(new(ArmorUpgradeNames[i])).Init()));
-            if(!Upgrade.Priority)
-                Error(Upgrade.ID.." doesn't have an priority");
-        }
+        // static const Class<ZArmorUpgrade> ArmorUpgradeNames[]={
+        //     // TODO: Make AllClasses Array PR $ZMAUpgrades
+        // };
+        // ArmorUpgrades=ZArmorUpgrades(new('ZArmorUpgrades').Init());
+        // ZArmorUpgrade Upgrade;
+        // for(int i=0; i<ArmorUpgradeNames.Size(); i++){
+        //     ArmorUpgrades.Add(Upgrade=ZArmorUpgrade(ZUpgrade(new(ArmorUpgradeNames[i])).Init()));
+        //     if(!Upgrade.Priority)
+        //         Error(Upgrade.ID.." doesn't have an priority");
+        // }
         // Entities
         Entities=ZEntityManager.Instance();
     }
