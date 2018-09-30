@@ -86,7 +86,9 @@ class ZMStats:Av_Thinker{
         SideMove2=(SideMove1=BaseSideMove=.52)/2;
         JumpZ=BaseJumpZ=7;
         ClamberSpeed=1;
-        Health=#config "STATS","iStartHealth";
+        Health=
+            #config "STATS","iStartHealth"
+        ;
         MaxHealth=BaseHealth;
         RunHealth=MaxHealth*RunHealthPercent;
         Plate=MaxPlate;
