@@ -100,19 +100,19 @@ class ZMStats:Av_Thinker{
         ShakeLevel=BaseShakeLevel;
         // Inventory
         MaxStrain=20;
-        AddUpgrade("LongFall");
-        AddUpgrade("BoostDash");
-        AddUpgrade("Shield");
-        AddUpgrade("BoostJump");
-        AddUpgrade("Magnet");
-        AddUpgrade("Jetpack");
-        AddUpgrade("PoweredSlide");
-        ToggleUpgrade("BoostJump");
-        ToggleUpgrade("BoostDash");
-        ToggleUpgrade("LongFall");
-        ToggleUpgrade("PoweredSlide");
-        // ToggleUpgrade("Magnet");
-        ToggleUpgrade("Jetpack");
+        // AddUpgrade("LongFall");
+        // AddUpgrade("BoostDash");
+        // AddUpgrade("Shield");
+        // AddUpgrade("BoostJump");
+        // AddUpgrade("Magnet");
+        // AddUpgrade("Jetpack");
+        // AddUpgrade("PoweredSlide");
+        // ToggleUpgrade("BoostJump");
+        // ToggleUpgrade("BoostDash");
+        // ToggleUpgrade("LongFall");
+        // ToggleUpgrade("PoweredSlide");
+        // // ToggleUpgrade("Magnet");
+        // ToggleUpgrade("Jetpack");
         return self;
     }
 

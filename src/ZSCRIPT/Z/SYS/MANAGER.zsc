@@ -19,7 +19,6 @@ class ZManager:Av_Thinker{
         // World State
         WorldState=new('ZWorldState');
         InitRegistries();
-        InitEvents();
         return self;
     }
 }
