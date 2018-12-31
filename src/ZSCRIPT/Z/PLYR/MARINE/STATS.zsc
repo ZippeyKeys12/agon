@@ -65,7 +65,10 @@ class ZMStats:Av_Thinker{
     ZMStats Instance(){
         ThinkerIterator it=ThinkerIterator.Create('ZMStats', STAT_STATIC);
         ZMStats p=ZMStats(it.Next());
-        if(!p)p=new('ZMStats').Init();
+        if(!p)
+            p=new('ZMStats').Init();
+        if(!P)
+            console.printf("fuck");
         return p;
     }
 

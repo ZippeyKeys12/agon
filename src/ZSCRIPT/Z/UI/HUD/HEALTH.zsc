@@ -39,8 +39,9 @@ class ZStatusBar{
         if(!PlayerInst||hMax!=PlayerInst.maxHealth/*||aMax!=PlayerInst.maxArmor||
            sMax!=PlayerInst.maxShield||eMax!=PlayerInst.maxEnergy||
            erMax!=PlayerInst.energyRechargeRate*/){
-            PlayerInst=ZMarine(CPlayer.mo);
-            if(!PlayerInst)return;
+            PlayerInst=ZPlayer(CPlayer.mo);
+            if(!PlayerInst || !PlayerInst.MStats)
+                return;
             MStats=PlayerInst.MStats;
             // Health
             hMax=PlayerInst.maxHealth;
@@ -56,6 +57,8 @@ class ZStatusBar{
             // shield.Reset(PlayerInst.shield);
             // Energy
             int temp;
+            if(!MStats)
+                console.printf("a");
             eMax=MStats.MaxEnergy;
             energy=LinearValueInterpolator.Create(0, .03*eMax);
             energy.Reset(MStats.Energy);

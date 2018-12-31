@@ -1,0 +1,7 @@
+extend
+class ZPlayer{
+    Array<String> Notifs;
+
+    void Notification(String NotificationText)
+    {Notifs.Push(NotificationText);}
+}

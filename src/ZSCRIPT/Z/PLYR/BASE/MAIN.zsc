@@ -24,14 +24,16 @@ class ZPlayer:PlayerPawn{
     override
     void PostBeginPlay(){
         super.PostBeginPlay();
+        Stats=ZStats.Instance();
+        MStats=ZMStats.Instance();
         UpdateStats();
         Perl2Shake=Av_Mapper.Create(2, 7, -2.5, 2.5);
-        Stats.ActualPitch=Pitch;
         Stats.ActualYaw=Angle;
+        Stats.ActualPitch=Pitch;
         Stats.ActualRoll=Roll;
-        ZBroadcaster.Notification("You feel sated");
-        ZBroadcaster.Notification("Your throat feels dry");
-        ZBroadcaster.Notification("The sun is shining, it's a beautiful day");
+        Notification("You feel sated");
+        Notification("Your throat feels dry");
+        Notification("The sun is shining, it's a beautiful day");
     }
 
     virtual
@@ -117,6 +119,8 @@ class ZPlayer:PlayerPawn{
     {Cl_Util.Log(GetClassName(), LOG_Error, "WIP");}
 }
 
+#include "ZSCRIPT/Z/PLYR/BASE/STATIC.zsc"
+#include "ZSCRIPT/Z/PLYR/BASE/INFO.zsc"
 #include "ZSCRIPT/Z/PLYR/BASE/VIEW.zsc"
 #include "ZSCRIPT/Z/PLYR/BASE/STATS.zsc"
 #include "ZSCRIPT/Z/PLYR/BASE/MOVEMENT.zsc"

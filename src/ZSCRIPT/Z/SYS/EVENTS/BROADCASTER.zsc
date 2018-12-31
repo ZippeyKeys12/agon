@@ -1,16 +1,10 @@
 class ZBroadcaster:StaticEventHandler{
     Array<ZEventHandler> Handlers;
 
-    Array<String> Notifs;
-
     static
     clearscope
     ZBroadcaster Instance()
     {return ZBroadcaster(EventHandler.Find('ZBroadcaster'));}
-
-    static
-    void Notification(String NotificationText)
-    {Instance().Notifs.Push(NotificationText);}
 
     override
     void WorldThingSpawned(WorldEvent e){

@@ -1,7 +1,7 @@
 class ZStatusBar:BaseStatusBar{
     const NOTIFSCALE=.4;
 
-    ZMarine PlayerInst;
+    ZPlayer PlayerInst;
 
     ZBroadcaster Broadcaster;
 

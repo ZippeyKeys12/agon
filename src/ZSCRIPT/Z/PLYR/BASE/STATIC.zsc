@@ -1,0 +1,9 @@
+extend
+class ZPlayer{
+    static
+    clearscope
+    ZPlayer DataInstance(){
+        ThinkerIterator it=ThinkerIterator.Create('ZPlayer', STAT_DEFAULT);
+        return ZPlayer(it.Next());
+    }
+}
