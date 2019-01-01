@@ -7,9 +7,6 @@ class ZManager{
     ZArmorUpgrades ArmorUpgrades;
 
     private
-    Array<Av_Graph> NodeGraphs;
-
-    private
     ZEntityManager Entities;
 
     private
@@ -59,13 +56,10 @@ class ZManager{
         //     if(!Upgrade.Priority)
         //         Error(Upgrade.ID.." doesn't have an priority");
         // }
+
         // Entities
         Entities=ZEntityManager.Instance();
     }
-
-    clearscope
-    Av_Graph Graph(uint Index)
-    {return NodeGraphs[Index];}
 
     clearscope
     ZDamageType DamageType(Name ID)

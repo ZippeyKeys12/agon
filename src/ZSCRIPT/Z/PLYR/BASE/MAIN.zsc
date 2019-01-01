@@ -31,6 +31,8 @@ class ZPlayer:PlayerPawn{
         Stats.ActualYaw=Angle;
         Stats.ActualPitch=Pitch;
         Stats.ActualRoll=Roll;
+
+        // Testing
         Notification("You feel sated");
         Notification("Your throat feels dry");
         Notification("The sun is shining, it's a beautiful day");

@@ -33,7 +33,7 @@ class ZStatusBar:BaseStatusBar{
         BeginHUD();
         if(!Stats)
             Stats=PlayerInst.Stats;
-        World2Clip=Av_Matrix2.WorldToClip(PlayerInst.Pos, PlayerInst.Angle, PlayerInst.Pitch, PlayerInst.Roll, CPlayer.FoV);
+        World2Clip=Av_Matrix2.WorldToClip((PlayerInst.Pos.X, PlayerInst.Pos.Y, CPlayer.ViewZ), PlayerInst.Angle, PlayerInst.Pitch, PlayerInst.Roll, CPlayer.FoV);
         DrawStats();
         DrawDebug();
         int VWidth=Screen.GetWidth()*.2,
@@ -48,6 +48,12 @@ class ZStatusBar:BaseStatusBar{
         Vector3 Pos=mo.Pos+Offset;
         Pos.Z+=PlayerInst.ViewHeight+PlayerInst.Pos.Z-CPlayer.ViewZ;
         Vector3 Vec3=World2Clip.Transform_3D(Pos).ToV3();
+        return ((1+Vec3.X)*Screen.GetWidth()/2, (1-Vec3.Y)*Screen.GetHeight()/2);
+    }
+
+    virtual
+    Vector2 WorldToView(Vector3 pos){
+        Vector3 Vec3=World2Clip.Transform_3D(pos).ToV3();
         return ((1+Vec3.X)*Screen.GetWidth()/2, (1-Vec3.Y)*Screen.GetHeight()/2);
     }
 

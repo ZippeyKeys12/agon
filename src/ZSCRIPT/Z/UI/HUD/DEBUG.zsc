@@ -21,4 +21,19 @@ class ZStatusBar{
         for(uint Index=0; Index<Min(PlayerInst.Notifs.Size(), 5); Index++)
             Screen.DrawText(SmallFont, Font.CR_GOLD, VWidth+312.5*NOTIFSCALE-SmallFont.StringWidth(PlayerInst.Notifs[Index]), SmallFont.GetHeight()*(.25+Index*1.25), PlayerInst.Notifs[Index], DTA_VirtualHeight, VHeight, DTA_VirtualWidth, VWidth);
     }
+
+    void DrawNavMesh(){
+        if(!Ek_Manager.DataInstance())
+            return;
+        let navMesh=Ek_Manager.DataInstance().navMesh;
+        let node=Ek_NavSector(navMesh.nodes[playerInst.curSector.Index()]);
+        if(!node)
+            return;
+        for(int i=0; i<node.edges.Size(); i++){
+            Line line=Ek_NavLine(node.edges[i]).ref;
+            Vector2 pos1=WorldToView((line.v1.p.x, line.v1.p.y, node.ref.floorplane.ZatPoint(line.v1.p))),
+                    pos2=WorldToView((line.v2.p.x, line.v2.p.y, node.ref.floorplane.ZatPoint(line.v2.p)));
+            Screen.DrawLine(pos1.x, pos1.y, pos2.x, pos2.y, Font.CR_WHITE);
+        }
+    }
 }
